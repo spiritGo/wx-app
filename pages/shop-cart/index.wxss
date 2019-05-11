@@ -1,5 +1,6 @@
 .container {
   background-color: #f2f2f2;
+  height: 100vh;
 }
 
 .no-goods {
@@ -46,6 +47,16 @@
   padding-bottom: 20rpx;
 }
 
+.goods .goods-list .goods-item:not(:last-child) {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.goods .goods-list .goods-item.active {
+  background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat
+    30rpx center;
+  background-size: 40rpx auto;
+}
+
 .goods .img-box {
   width: 160rpx;
   height: 160rpx;
@@ -61,12 +72,15 @@
   font-size: 26rpx;
   padding-left: 50rpx;
   padding-right: 20rpx;
+  height: 100%;
+  flex: 1;
 }
 
 .goods .info .price-num {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-top: 50rpx;
 }
 
 .goods .price-num .num {
@@ -100,4 +114,38 @@
   border-bottom: 1px solid #ccc;
   border-top-right-radius: 6rpx;
   border-bottom-right-radius: 6rpx;
+}
+
+.total {
+  display: flex;
+  font-size: 26rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  justify-content: space-between;
+  align-items: stretch;
+  background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx
+    center;
+  background-size: 40rpx auto;
+  padding-left: 100rpx;
+}
+
+.total .total-btn {
+  background-color: red;
+  width: 260rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.total .total-text {
+  color: red;
+}
+
+.total.active {
+  background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat
+    30rpx center;
+  background-size: 40rpx auto;
 }

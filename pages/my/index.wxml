@@ -1,2 +1,52 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class='container'>
+    <view class='score'>
+        <view class='score-amount'>
+            <view>0</view>
+            <view>可用余额</view>
+        </view>
+        <view class='score-left'>
+            <view>0</view>
+            <view>可用积分</view>
+        </view>
+    </view>
+    <view class='order'>
+        <view class='my-item'>我的订单</view>
+        <view>
+            <view class='item'>
+                <image src="/images/order/topay.png"></image>
+                <view>待付款</view>
+            </view>
+            <view class='item'>
+                <image src='/images/order/fahuo.png'></image>
+                <view>待发货</view>
+            </view>
+            <view class='item'>
+                <image src='/images/order/shouhuo.png'></image>
+                <view>待收货</view>
+            </view>
+            <view class='item'>
+                <image src='/images/order/pj.png'></image>
+                <view>待评价</view>
+            </view>
+        </view>
+    </view>
+    <view class='active'>
+        <view class='my-item'>资金明细</view>
+        <view class='my-item'>每日签到</view>
+        <view class='my-item'>积分兑换</view>
+        <view class='my-item'>收货地址</view>
+        <view class='my-item'>领券中心</view>
+    </view>
+    <view class='about-us'>
+        <view class='my-item'>关于我们</view>
+    </view>
+    <view class='bindMsg'>
+        <view>
+            <button>绑定手机号码</button>
+        </view>
+        <view>
+            <button type="warn">重新授权登录</button>
+        </view>
+    </view>
+    <view class='copyright'>Powered by EastWorld v</view>
+</view>

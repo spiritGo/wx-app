@@ -28,7 +28,7 @@ Page({
         goodsDetail: goodsDetailRes.data,
         buyNumMax: goodsDetailRes.data.basicInfo.stores
       })
-      // console.log(this.data.buyNumMax)
+      // console.log(goodsDetailRes)
     }
 
     if (goodsKanjiaSetRes.code == 0) {
@@ -121,6 +121,13 @@ Page({
 
   },
 
+  toShopCart() {
+    // console.log('jfdsjflkdsf')
+    wx.switchTab({
+      url: '/pages/shop-cart/index',
+    })
+  },
+
   /**
    * 组建购物车信息
    */
@@ -130,9 +137,10 @@ Page({
     shopCarMap.goodsId = this.data.goodsDetail.basicInfo.id;
     shopCarMap.pic = this.data.goodsDetail.basicInfo.pic;
     shopCarMap.name = this.data.goodsDetail.basicInfo.name;
-    shopCarMap.price = this.data.goodsDetail.basicInfo.price;
-    shopCarMap.totalPrice = this.data.totalPrice;
+    shopCarMap.price = this.data.goodsDetail.basicInfo.originalPrice;
+    shopCarMap.totalPrice = 0;
     shopCarMap.shopNum = this.data.buyNum
+    shopCarMap.active = true
     // console.log(shopCarMap.shopNum)
 
     var shopCarInfo = this.data.shopCarInfo

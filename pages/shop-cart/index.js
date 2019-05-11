@@ -5,7 +5,97 @@ Page({
    * 页面的初始数据
    */
   data: {
-    shopCart: {}
+    shopCart: {},
+    selectAll: false
+  },
+
+  toIndex() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+
+  select(e) {
+    const curIndex = e.currentTarget.dataset.index
+    const item = this.data.shopCart.shopList[curIndex];
+    var active = item.active;
+    item.active = !active;
+    this.data.shopCart.shopList.splice(curIndex, 1, item)
+    // console.log(this.data.shopCart)
+    this.setData({
+      shopCart: this.data.shopCart
+    })
+
+    wx.setStorage({
+      key: 'shopCarInfo',
+      data: this.data.shopCart
+    })
+
+    this.selectAll();
+    this.totalPrice();
+  },
+
+  jiaTap(e) {
+    var idx = e.currentTarget.dataset.index
+    var shopCart = this.data.shopCart
+    var item = shopCart.shopList[idx]
+
+    item.shopNum++;
+    shopCart.shopNum++;
+
+    this.setData({
+      shopCart: shopCart
+    })
+
+    wx.setStorage({
+      key: 'shopCarInfo',
+      data: shopCart,
+    })
+
+    this.totalPrice();
+    // console.log(shopCart.shopList)
+
+  },
+
+  jianTap(e) {
+    var idx = e.currentTarget.dataset.index
+    var shopCart = this.data.shopCart
+    var item = shopCart.shopList[idx]
+
+    if (item.shopNum > 1) {
+      item.shopNum--;
+      shopCart.shopNum--;
+
+      this.setData({
+        shopCart: shopCart
+      })
+
+      wx.setStorage({
+        key: 'shopCarInfo',
+        data: shopCart,
+      })
+    }
+
+    this.totalPrice();
+  },
+
+  totalPrice() {
+    var shopCart = this.data.shopCart
+    var list = shopCart.shopList
+    var totalPrice = 0
+
+    for (var item of list) {
+      if (item.active) {
+        totalPrice += item.shopNum * item.price;
+      }
+    }
+
+    shopCart.totalPrice = totalPrice;
+    this.setData({
+      shopCart: shopCart
+    })
+
+    // console.log(shopCart)
   },
 
   /**
@@ -18,7 +108,18 @@ Page({
     wx.setNavigationBarTitle({
       title: '购物车',
     })
+  },
 
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    const _this = this;
     // 获取购物车信息
     wx.getStorage({
       key: 'shopCarInfo',
@@ -26,26 +127,22 @@ Page({
         _this.setData({
           shopCart: res.data
         })
-
-        console.log(res)
+        _this.selectAll();
+        _this.totalPrice();
       },
     })
-
-    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
+  selectAll() {
+    var list = this.data.shopCart.shopList;
+    // console.log()
+    var active = list.every(function(val, idx) {
+      return val.active
+    })
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
+    this.setData({
+      selectAll: active
+    })
   },
 
   /**

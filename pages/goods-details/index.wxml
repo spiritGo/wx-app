@@ -82,13 +82,15 @@
       <contact-button style="opacity:0" type='default-dark' session-from='weapp' size="27"></contact-button>
       <view>客服</view>
     </view>
-    <view class='shop-cart'>
+    <view class='shop-cart' bindtap='toShopCart'>
       <view class='shopNum'>({{shopNum}})</view>
       <view class='title'>购物车</view>
     </view>
     <view class="add-cart" wx:if="{{goodsDetail.basicInfo.pingtuan}}" bindtap='tobuy'>单独购买</view>
     <view class='now-buy' wx:if="{{goodsDetail.basicInfo.pingtuan}}" bindtap='toPintuan'>发起拼团</view>
-    <view class="add-cart" wx:if="{{!goodsDetail.basicInfo.pingtuan}}" bindtap='toShopCar'>加入购物车</view>
+    <view class="add-cart" wx:if="{{!goodsDetail.basicInfo.pingtuan}}" bindtap='toShopCar'>
+      加入购物车
+    </view>
     <view class='now-buy' wx:if="{{!goodsDetail.basicInfo.pingtuan}}" bindtap='tobuy'>立即购买</view>
   </view>
   <view class='show-popup' hidden="{{hideShopPopup}}" catchtouchmove='true'>
@@ -109,7 +111,7 @@
         <view class="num_box">
           <view class='jian' bindtap='numjian'>-</view>
           <view class="num">
-            <input value="{{buyNum}}" disabled/>
+            <input value="{{buyNum}}" disabled />
           </view>
           <view class="add" bindtap='numjia'>+</view>
         </view>

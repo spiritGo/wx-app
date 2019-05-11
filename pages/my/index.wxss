@@ -1,1 +1,117 @@
-/* pages/my/index.wxss */
+.container {
+  background: #f2f2f2;
+  padding-bottom: 20rpx;
+}
+
+.score {
+  background-color: #fff;
+  display: flex;
+  padding: 20rpx 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  border-top: 1rpx solid #ccc6;
+}
+
+.score .score-amount {
+  flex: 1;
+  border-right: 1rpx solid #ccc6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score .score-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.order {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  background-color: #fff;
+}
+
+.order .my-item {
+  border-bottom: 1rpx solid #ccc6;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png)
+    no-repeat 700rpx center;
+  background-size: 16rpx auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+}
+
+.active {
+  font-size: 26rpx;
+  background-color: #fff;
+  margin-top: 16rpx;
+}
+
+.active .my-item {
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png)
+    no-repeat 700rpx center;
+  background-size: 16rpx auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+}
+
+.active .my-item:not(:last-child) {
+  border-bottom: 1rpx solid #ccc6;
+}
+
+.order > view:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 20rpx 0;
+}
+
+.order .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order .item image {
+  width: 67rpx;
+  height: 67rpx;
+}
+
+.about-us {
+  background-color: #fff;
+  margin: 20rpx 0;
+  padding: 10rpx 0;
+}
+
+.about-us .my-item {
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png)
+    no-repeat 700rpx center;
+  background-size: 16rpx auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+}
+
+.bindMsg {
+  background-color: #fff;
+  padding: 20rpx 0;
+}
+
+.bindMsg button {
+  margin: 10rpx;
+}
+
+.copyright {
+  margin-top: 10rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  padding: 30rpx;
+}
