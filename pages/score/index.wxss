@@ -1,0 +1,19 @@
+/* pages/score/index.wxss */
+.score {
+  background-color: #e85654;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  padding: 50rpx 0;
+}
+
+.score view:nth-child(2) {
+  margin-top: 10rpx;
+}
+
+.no-score {
+  margin-top: 100rpx;
+  color: #ccc;
+  text-align: center;
+  font-size: 26rpx;
+}

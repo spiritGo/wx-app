@@ -10,12 +10,12 @@
   justify-content: center;
   align-items: center;
   font-size: 26rpx;
-  border-top: 1rpx solid #ccc6;
+  border-top: 1rpx solid #eee;
 }
 
 .score .score-amount {
   flex: 1;
-  border-right: 1rpx solid #ccc6;
+  border-right: 1rpx solid #eee;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@
 }
 
 .order .my-item {
-  border-bottom: 1rpx solid #ccc6;
+  border-bottom: 1rpx solid #eee;
   background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png)
     no-repeat 700rpx center;
   background-size: 16rpx auto;
@@ -62,7 +62,7 @@
 }
 
 .active .my-item:not(:last-child) {
-  border-bottom: 1rpx solid #ccc6;
+  border-bottom: 1rpx solid #eee;
 }
 
 .order > view:nth-child(2) {

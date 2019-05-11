@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='asset'>
+    <view class='asset-info'>
+      <view class='left'>
+        <view>可用余额(元)</view>
+        <view>0</view>
+      </view>
+      <view class='frezz'>
+        <view>冻结金额</view>
+        <view>0</view>
+      </view>
+      <view class='collection'>
+        <view>累计消费(元)</view>
+        <view></view>
+      </view>
+    </view>
+    <view class='asset-opration'>
+      <button class='btn' size="mini" plain="true" form-type='submit'>充值</button>
+      <button class='btn' size="mini" plain="true" form-type='submit'>提现</button>
+    </view>
+  </view>
+  <view class='no-asset'>暂无资金明细 ~</view>
+</view>

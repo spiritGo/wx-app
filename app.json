@@ -5,7 +5,10 @@
     "pages/shop-cart/index",
     "pages/my/index",
     "pages/notice/show",
-    "pages/goods-details/index"
+    "pages/goods-details/index",
+    "pages/asset/index",
+    "pages/score/index",
+    "pages/sign/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

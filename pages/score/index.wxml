@@ -1,0 +1,7 @@
+<view class='container'>
+  <view class='score'>
+    <view>可用积分</view>
+    <view>0</view>
+  </view>
+  <view class='no-score'>暂无积分明细~</view>
+</view>

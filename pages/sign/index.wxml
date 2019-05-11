@@ -1,0 +1,2 @@
+<!--pages/sign/index.wxml-->
+<calendar calendar='{{calendar}}' gesture='{{gesture}}'></calendar>
