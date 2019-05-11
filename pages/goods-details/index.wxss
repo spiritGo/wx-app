@@ -1,0 +1,254 @@
+.container {
+  padding-bottom: 100rpx;
+}
+
+.swiper-container {
+  width: 100vw;
+}
+
+.swiper-container swiper {
+  width: 100vw;
+  height: 748rpx;
+}
+
+.swiper-container image {
+  width: 100%;
+  height: 748rpx;
+}
+
+.baseInfo {
+  font-size: 30rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.baseInfo .title_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.baseInfo .share {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.baseInfo .share image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.baseInfo .share text {
+  font-size: 23rpx;
+}
+
+.baseInfo .price_box {
+  display: flex;
+  align-items: center;
+}
+
+.baseInfo .price_box .price {
+  flex: 1;
+  color: red;
+}
+
+.baseInfo .price_box .buy,
+.baseInfo .price_box .score {
+  color: #aaa;
+  font-size: 20rpx;
+  flex: 1;
+}
+
+.kanjia {
+  margin-bottom: 30rpx;
+}
+
+.kanjia button {
+  margin: 30rpx;
+}
+
+.intro {
+  font-size: 26rpx;
+  color: #aaa;
+  padding: 16rpx;
+  line-height: 2;
+}
+
+.intro .title {
+  color: #333;
+  margin-left: 10rpx;
+}
+
+.intro button {
+  margin: 30rpx;
+}
+
+.footer-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background-color: #fff;
+  box-shadow: 0 0 8rpx;
+  display: flex;
+  align-items: center;
+}
+
+.footer-box .contact {
+  flex: 1;
+  font-size: 20rpx;
+  color: #008000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background: url("https://cdn.it120.cc/images/weappshop/kefu.png") no-repeat
+    center 10rpx;
+  background-size: 55rpx auto;
+}
+
+.footer-box .shop-cart {
+  flex: 1;
+  font-size: 20rpx;
+  color: #008000;
+  position: relative;
+  background: url("https://cdn.it120.cc/images/weappshop/cart.png") no-repeat
+    center 20rpx;
+  background-size: 46rpx auto;
+  height: 100rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-box .shop-cart .title {
+  position: absolute;
+  bottom: 4rpx;
+  color: #aaa;
+}
+
+.footer-box .shop-cart .shopNum {
+  position: absolute;
+  right: 16rpx;
+  top: 16rpx;
+  font-size: 16rpx;
+  color: red;
+}
+
+.footer-box .add-cart,
+.footer-box .now-buy {
+  flex: 2;
+  background-color: #ff6850;
+  color: #fff;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-box .now-buy {
+  background-color: #e64340;
+}
+
+.show-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 4;
+}
+
+.show-popup .shop-info-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.show-popup .img_box {
+  width: 150rpx;
+
+}
+
+.show-popup .img_box image {
+  width: 150rpx;
+}
+
+.show-popup .addToCart {
+  background-color: #e64340;
+  border-radius: 0;
+  color: #fff;
+}
+
+.show-popup .cancle {
+  width: 36rpx;
+  height: 36rpx;
+  background: url("https://cdn.it120.cc/images/weappshop/popup-close.png")
+    no-repeat center center;
+  background-size: 36rpx auto;
+  margin-top: -110rpx;
+  margin-right: 20rpx
+}
+
+.show-popup .mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.show-popup .shop_box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 6;
+}
+
+.show-popup .shopInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  padding: 0 30rpx;
+}
+
+.show-popup .shopInfo .price {
+  color: red;
+  margin-top: 20rpx;
+}
+
+.show-popup .buyNum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50rpx;
+  font-size: 26rpx;
+}
+
+.show-popup .num_box {
+  display: flex;
+  justify-content: center;
+}
+
+.show-popup .num_box .jian,
+.show-popup .num_box input,
+.show-popup .num_box .add {
+  width: 80rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  border: 1rpx solid #eee;
+  text-align: center;
+}

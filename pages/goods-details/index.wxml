@@ -1,0 +1,120 @@
+<import src='../../wxParse/wxParse.wxml' />
+<view class='container'>
+  <view class='swiper-container'>
+    <swiper>
+      <swiper-item wx:for='{{goodsDetail.pics}}' wx:key='index'>
+        <image mode="widthFix" src='{{item.pic}}'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='baseInfo'>
+    <view class="title_box">
+      <text class="title">{{goodsDetail.basicInfo.name}}</text>
+      <view class="share">
+        <image src="../../images/qd.png" />
+        <text>分享有赏</text>
+      </view>
+    </view>
+    <view class="price_box">
+      <text class="price">¥{{goodsDetail.basicInfo.originalPrice}}</text>
+      <text class="buy">购买{{goodsDetail.basicInfo.numberOrders}}次</text>
+      <text class="score">共收到{{goodsDetail.basicInfo.gotScore}}次好评</text>
+    </view>
+  </view>
+  <!-- 砍价 -->
+  <view class='kanjia' wx:if="{{goodsKanjia}}">
+    <view class="weui-cells__title">商品砍价设置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">限量</view>
+        <view class="weui-cell__ft">{{goodsKanjia.number}}份</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">已售</view>
+        <view class="weui-cell__ft">{{goodsKanjia.numberBuy}}份</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">原价</view>
+        <view class="weui-cell__ft">¥ {{goodsKanjia.originalPrice}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">底价</view>
+        <view class="weui-cell__ft">¥ {{goodsKanjia.minPrice}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">截止</view>
+        <view class="weui-cell__ft">{{goodsKanjia.dateEnd}}</view>
+      </view>
+    </view>
+    <button type='warn' class="weui-btn">我也要报名</button>
+  </view>
+  <!-- 拼团 -->
+  <view class='kanjia' wx:if="{{goodsDetail.basicInfo.pingtuan}}">
+    <view class="weui-cells__title">商品拼团设置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">已成团</view>
+        <view class="weui-cell__ft">{{pingtuanSet.numberSucccess}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">成团人数</view>
+        <view class="weui-cell__ft">{{pingtuanSet.numberPersion}}份</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">退款条件</view>
+        <view class="weui-cell__ft">{{pingtuanSet.timeoutHours}}小时未成团</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">截止</view>
+        <view class="weui-cell__ft">{{pingtuanSet.dateEnd}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='intro'>
+    <view class="title">商品介绍</view>
+    <view>
+      <template is='wxParse' data='{{wxParseData:article.nodes}}' />
+    </view>
+    <button class='weui-btn' type='warn' wx:if='{{goodsKanjia}}'>用当前价购买</button>
+  </view>
+  <view class='footer-box' wx:if='{{!goodsKanjia}}'>
+    <view class='contact'>
+      <contact-button style="opacity:0" type='default-dark' session-from='weapp' size="27"></contact-button>
+      <view>客服</view>
+    </view>
+    <view class='shop-cart'>
+      <view class='shopNum'>({{shopNum}})</view>
+      <view class='title'>购物车</view>
+    </view>
+    <view class="add-cart" wx:if="{{goodsDetail.basicInfo.pingtuan}}" bindtap='tobuy'>单独购买</view>
+    <view class='now-buy' wx:if="{{goodsDetail.basicInfo.pingtuan}}" bindtap='toPintuan'>发起拼团</view>
+    <view class="add-cart" wx:if="{{!goodsDetail.basicInfo.pingtuan}}" bindtap='toShopCar'>加入购物车</view>
+    <view class='now-buy' wx:if="{{!goodsDetail.basicInfo.pingtuan}}" bindtap='tobuy'>立即购买</view>
+  </view>
+  <view class='show-popup' hidden="{{hideShopPopup}}" catchtouchmove='true'>
+    <view class="mask"></view>
+    <view class="shop_box">
+      <view class="shop-info-box">
+        <view class='img_box'>
+          <image mode="widthFix" src="{{goodsDetail.basicInfo.pic}}" />
+        </view>
+        <view class='shopInfo'>
+          <text class='title'>{{goodsDetail.basicInfo.name}}</text>
+          <text class='price'>¥ {{goodsDetail.basicInfo.minPrice}}</text>
+        </view>
+        <view class="cancle" bindtap='cacleShop'></view>
+      </view>
+      <view class="buyNum">
+        <text class="title">购买数量</text>
+        <view class="num_box">
+          <view class='jian' bindtap='numjian'>-</view>
+          <view class="num">
+            <input value="{{buyNum}}" disabled/>
+          </view>
+          <view class="add" bindtap='numjia'>+</view>
+        </view>
+      </view>
+      <button class="addToCart" bindtap='addToCart'>加入购物车</button>
+    </view>
+  </view>
+</view>

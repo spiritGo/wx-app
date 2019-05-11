@@ -1,0 +1,30 @@
+<view class='container'>
+  <view class='no-goods' wx:if="{{shopCart.shopNum == 0}}">
+    <view>购物车空空如也 ~</view>
+    <button size="mini" type="warn">去逛逛</button>
+  </view>
+  <view class="goods">
+    <view class="header">
+      <text class="wei">微商城</text>
+      <text class="edit">编辑</text>
+    </view>
+    <view class="goods-list">
+      <view class="goods-item" wx:for="{{shopCart.shopList}}" wx:key="index">
+        <view class="img-box">
+          <image src="{{item.pic}}" />
+        </view>
+        <view class="info">
+          <view class="title">{{item.name}}</view>
+          <view class="price-num">
+            <view class="price">¥ 600</view>
+            <view class="num">
+              <view class="jian">-</view>
+              <input type="number" value="{{item.shopNum}}" />
+              <view class="jia">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
